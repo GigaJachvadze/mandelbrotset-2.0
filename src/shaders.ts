@@ -37,12 +37,12 @@ void main() {
     float a = dx;
     float b = dy;
 
-    for(float i = 0.0; i < 2000.0; i++) {
+    for(float i = 0.0; i < ${PARAMETERS.maxIteration}.0; i++) {
         float d = (a * a) - (b * b) + dx;
         b = 2.0 * (a * b) + dy;
         a = d;
         if (d > 10000.0) {
-            outColor = vec4(i * 1.3, i * 0.9, i * 0.3, 1);
+            outColor = vec4((i / ${Math.round(PARAMETERS.maxIteration * PARAMETERS.color.r / 255)}.0), (i / ${Math.round(PARAMETERS.maxIteration * PARAMETERS.color.g / 255)}.0) * 0.6, (i / ${Math.round(PARAMETERS.maxIteration * PARAMETERS.color.b / 255)}.0) * 0.6, ${Math.round(PARAMETERS.maxIteration * PARAMETERS.color.a / 255)}.0);
             break;
         }
     }
