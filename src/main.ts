@@ -19,7 +19,7 @@ export class Main {
    onInit(): void {
     window.addEventListener('wheel', event => this.onZoomChange(event));
     this.setUpDraggable();
-    this.draggableElement.addEventListener('mousedown', event => {
+    this.draggableElement.addEventListener('mousedown', () => {
         this.dragging = true;
     });
     this.draggableElement.addEventListener('mousemove', event => {
@@ -27,7 +27,7 @@ export class Main {
         this.onDrag(event);
       }
     })
-    this.draggableElement.addEventListener('mouseup', event => {
+    this.draggableElement.addEventListener('mouseup', () => {
         this.dragging = false;
     })
     this.setUpSliders();
@@ -40,27 +40,27 @@ export class Main {
   }
 
   setUpSliders(): void {
-    let r = document.getElementById('r');
-    let g = document.getElementById('g');
-    let b = document.getElementById('b');
-    let a = document.getElementById('a');
+    // let r = document.getElementById('r');
+    // let g = document.getElementById('g');
+    // let b = document.getElementById('b');
+    // let a = document.getElementById('a');
 
-    r.addEventListener('input', event => {
-      PARAMETERS.color.r = r.value;
-      this.canvas.deepDraw();
-    })
-    g.addEventListener('input', event => {
-      PARAMETERS.color.g = g.value;
-      this.canvas.deepDraw();
-    })
-    b.addEventListener('input', event => {
-      PARAMETERS.color.b = b.value;
-      this.canvas.deepDraw();
-    })
-    a.addEventListener('input', event => {
-      PARAMETERS.color.a = a.value;
-      this.canvas.deepDraw();
-    })
+    // r.addEventListener('input', event => {
+    //   PARAMETERS.color.r = r.value;
+    //   this.canvas.deepDraw();
+    // })
+    // g.addEventListener('input', event => {
+    //   PARAMETERS.color.g = g.value;
+    //   this.canvas.deepDraw();
+    // })
+    // b.addEventListener('input', event => {
+    //   PARAMETERS.color.b = b.value;
+    //   this.canvas.deepDraw();
+    // })
+    // a.addEventListener('input', event => {
+    //   PARAMETERS.color.a = a.value;
+    //   this.canvas.deepDraw();
+    // })
   }
 
   onZoomChange(event: any): void {

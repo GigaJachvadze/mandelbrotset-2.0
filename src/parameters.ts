@@ -10,7 +10,7 @@ export let PARAMETERS: IParameters = {
         b: 255,
         a: 255
     },
-    maxIteration: 500
+    maxIteration: 1000
 }
 
 export interface IParameters {
